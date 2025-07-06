@@ -24,9 +24,9 @@
     <meta name="twitter:image" content="https://seusite.com/images/og-image.jpg">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/d1/1f/fd/d11ffdd8bed2f14b768ed51f378a11f3.jpg" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/d1/1f/fd/d11ffdd8bed2f14b768ed51f378a11f3.jpg" sizes="16x16">
-    <link rel="apple-touch-icon" sizes="https://i.pinimg.com/736x/d1/1f/fd/d11ffdd8bed2f14b768ed51f378a11f3.jpg" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/e8/08/c3/e808c32cbf7e175573bce0b6248efab6.jpg" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/e8/08/c3/e808c32cbf7e175573bce0b6248efab6.jpg" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="https://i.pinimg.com/736x/e8/08/c3/e808c32cbf7e175573bce0b6248efab6.jpg" href="/apple-touch-icon.png">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
     
     <!-- Manifest para PWA -->
@@ -37,6 +37,7 @@
     
     <!-- Estilos e Scripts -->
     <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./main.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.min.js" defer></script>
     
@@ -44,203 +45,7 @@
     <link rel="preload" href="./src/output.css" as="style">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Playfair Display', 'serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out forwards',
-                        'slide-up': 'slideUp 0.6s ease-out forwards',
-                        'float': 'float 6s ease-in-out infinite',
-                        'scale-in': 'scaleIn 0.5s ease-out forwards',
-                        'shimmer': 'shimmer 2s linear infinite',
-                        'draw-line': 'drawLine 2s ease-out forwards',
-                    },
-                    backdropBlur: {
-                        'xs': '2px',
-                    }
-                }
-            }
-        }
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        @keyframes drawLine {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #000000 0%, #404040 50%, #000000 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .shimmer-effect {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .shimmer-effect::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-        
-        .glass-effect {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .luxury-shadow {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .elegant-border {
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .elegant-border:hover {
-            border-color: rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .luxury-card {
-            background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .luxury-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .draw-line {
-            position: relative;
-        }
-        
-        .draw-line::after {
-            content: '';
-            position: absolute;
-            bottom: -24px;
-            left: 0;
-            height: 2px;;
-            background: linear-gradient(90deg, #000000, #404040);
-            animation: drawLine 2s ease-out forwards;
-        }
-        
-        .minimal-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .minimal-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .minimal-button:hover::before {
-            left: 100%;
-        }
-        
-        .hero-pattern {
-            background-image: radial-gradient(circle at 25% 25%, rgba(0,0,0,0.02) 0%, transparent 50%),
-                              radial-gradient(circle at 75% 75%, rgba(0,0,0,0.02) 0%, transparent 50%);
-        }
-        
-        .section-divider {
-            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
-            height: 1px;
-            margin: 0 auto;
-            width: 60%;
-        }
-        
-        .portfolio-overlay {
-            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        
-        .luxury-input {
-            transition: all 0.3s ease;
-            border: 2px solid rgba(0,0,0,0.1);
-        }
-        
-        .luxury-input:focus {
-            border-color: #000000;
-            box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
-        }
-        
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #000000, #404040);
-            transform-origin: 0%;
-            z-index: 9999;
-        }
-        
-        .fade-in-observed {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .fade-in-observed.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .stagger-animation {
-            animation-delay: calc(var(--stagger) * 0.1s);
-        }
-    </style>
 </head>
 <body class="bg-white text-black font-sans antialiased">
     <!-- Scroll Progress Indicator -->
@@ -258,14 +63,14 @@
                         </div>
                         <span class="font-semibold text-lg">K Projeções</span>
                     </div>
-                    <button id="closeSidebar" class="text-2xl hover:text-gray-600 transition-colors">×</button>
+                    <button id="closeSidebar" class="text-5xl font-extralight hover:text-gray-600 transition-colors">×</button>
                 </div>
                 <nav class="space-y-6">
-                    <a href="#inicio" class="block text-lg font-light hover:text-gray-600 transition-colors py-2">Início</a>
-                    <a href="#sobre" class="block text-lg font-light hover:text-gray-600 transition-colors py-2">Sobre</a>
-                    <a href="#servicos" class="block text-lg font-light hover:text-gray-600 transition-colors py-2">Serviços</a>
-                    <a href="#portfolio" class="block text-lg font-light hover:text-gray-600 transition-colors py-2">Portfólio</a>
-                    <a href="#contato" class="block text-lg font-light hover:text-gray-600 transition-colors py-2">Contato</a>
+                    <a href="#inicio" class="block text-3xl font-light hover:text-gray-600 transition-colors py-2">Início</a>
+                    <a href="#sobre" class="block text-3xl font-light hover:text-gray-600 transition-colors py-2">Sobre</a>
+                    <a href="#servicos" class="block text-3xl font-light hover:text-gray-600 transition-colors py-2">Serviços</a>
+                    <a href="#portfolio" class="block text-3xl font-light hover:text-gray-600 transition-colors py-2">Portfólio</a>
+                    <a href="#contato" class="block text-3xl font-light hover:text-gray-600 transition-colors py-2">Contato</a>
                 </nav>
             </div>
         </div>
@@ -299,7 +104,6 @@
                     <button id="openSidebar" class="lg:hidden flex flex-col space-y-1 group">
                         <span class="block h-0.5 w-6 bg-black group-hover:bg-gray-600 transition-colors"></span>
                         <span class="block h-0.5 w-6 bg-black group-hover:bg-gray-600 transition-colors"></span>
-                        <span class="block h-0.5 w-6 bg-black group-hover:bg-gray-600 transition-colors"></span>
                     </button>
                 </div>
             </div>
@@ -322,10 +126,10 @@
                 </div>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-16">
-                    <button class="minimal-button bg-black text-white px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    <button data-scroll="#servicos" class="minimal-button bg-black text-white px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-900 transition-all duration-300">
                         NOSSOS SERVIÇOS
                     </button>
-                    <button class="minimal-button border-2 border-black text-black px-12 py-4 text-sm font-light tracking-widest hover:bg-black hover:text-white transition-all duration-300">
+                    <button data-scroll="#contato" class="minimal-button border-2 border-black text-black px-12 py-4 text-sm font-light tracking-widest hover:bg-black hover:text-white transition-all duration-300">
                         FALE CONOSCO
                     </button>
                 </div>
@@ -847,14 +651,14 @@
                         <li class="text-gray-600 font-light">Av. Presidente Vargas, 123</li>
                         <li class="text-gray-600 font-light">Belém, PA - Brasil</li>
                         <li class="text-gray-600 font-light">+55 (91) 1234-5678</li>
-                        <li class="text-gray-600 font-light">contato@kprojecoes.com</li>
+                        <li class="text-gray-600 font-light">@kprojecoesgmail.com</li>
                     </ul>
                 </div>
             </div>
             
             <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-500 text-sm font-light mb-4 md:mb-0">
-                    © 2023 K Projeções & Eventos. Todos os direitos reservados.
+                    © 2025 K Projeções & Eventos. Todos os direitos reservados.
                 </p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-500 text-sm font-light hover:text-black transition-colors">Termos de Serviço</a>
@@ -870,129 +674,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     </button>
-
-    <script>
-        // Mobile Sidebar Toggle
-        const mobileSidebar = document.getElementById('mobileSidebar');
-        const sidebarContent = document.getElementById('sidebarContent');
-        const openSidebar = document.getElementById('openSidebar');
-        const closeSidebar = document.getElementById('closeSidebar');
-        const sidebarOverlay = document.getElementById('sidebarOverlay');
         
-        openSidebar.addEventListener('click', () => {
-            mobileSidebar.classList.remove('hidden');
-            setTimeout(() => {
-                sidebarContent.classList.remove('translate-x-full');
-            }, 10);
-        });
-        
-        closeSidebar.addEventListener('click', () => {
-            sidebarContent.classList.add('translate-x-full');
-            setTimeout(() => {
-                mobileSidebar.classList.add('hidden');
-            }, 300);
-        });
-        
-        sidebarOverlay.addEventListener('click', () => {
-            sidebarContent.classList.add('translate-x-full');
-            setTimeout(() => {
-                mobileSidebar.classList.add('hidden');
-            }, 300);
-        });
-        
-        // Scroll Progress Indicator
-        const scrollProgress = document.getElementById('scrollProgress');
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.width = progress + '%';
-        });
-        
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.remove('opacity-0', 'invisible');
-                backToTop.classList.add('opacity-100', 'visible');
-            } else {
-                backToTop.classList.remove('opacity-100', 'visible');
-                backToTop.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        let lastScroll = 0;
-        
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                header.classList.remove('glass-effect');
-                header.classList.add('glass-effect');
-                return;
-            }
-            
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                // Scroll Down
-                header.classList.remove('glass-effect');
-            } else {
-                // Scroll Up
-                header.classList.add('glass-effect');
-            }
-            
-            lastScroll = currentScroll;
-        });
-        
-        // Intersection Observer for Fade-in Animations
-        const fadeElements = document.querySelectorAll('.fade-in-observed');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        fadeElements.forEach(element => {
-            observer.observe(element);
-        });
-        
-        // Smooth Scrolling for Anchor Links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile sidebar if open
-                    if (!mobileSidebar.classList.contains('hidden')) {
-                        sidebarContent.classList.add('translate-x-full');
-                        setTimeout(() => {
-                            mobileSidebar.classList.add('hidden');
-                        }, 300);
-                    }
-                }
-            });
-        });
-    </script>
+    <script src="./tailwind.js"></script>
+    <script src="./main.js"></script>
+    <script src="./scroll.js"></script>
 </body>
 </html>
